@@ -29,7 +29,7 @@ export class UserController {
     // @GetUser() user,
     @Query() query:FindUserRequestDto
     ): Promise<ResponseData<IUser>> {
-    const result = await this.user_service.findAll(query.track, query.slack_name);
+    const result = await this.user_service.findAll(query);
     delete result.password;
     return {
       status: HttpStatus.OK,

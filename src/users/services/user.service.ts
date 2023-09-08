@@ -37,7 +37,7 @@ export class UserService {
     };
   }
 
-  async findAll(where?: any, query?: any): Promise<IUser | null> {
+  async findAll(where?: any): Promise<IUser | null> {
     return this.user_model.findOne({ where: where});
   }
 }
