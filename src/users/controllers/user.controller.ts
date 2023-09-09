@@ -13,6 +13,7 @@ import { ResponseData } from 'src/users/dto/response/data.response.dto';
 import { IUser } from 'src/users/interfaces/user.interface';
 import { GetUser } from 'src/decorators/get_user.decorator';
 import { FindUserRequestDto } from 'src/users/dto/request/get.user.query.request.dto';
+import moment from 'moment';
 
 @Controller('api')
 export class UserController {
@@ -35,16 +36,18 @@ export class UserController {
     @Query() query: FindUserRequestDto,
     @Res() res,
   ): Promise<IUser> {
+    const currentDay = moment().tz('UTC').format('dddd');
+    const utcTime = new Date().toISOString().split('.')[0] + 'Z';
     const result = await this.user_service.findAll({}, query);
     const status = HttpStatus.OK;
 
     return res.status(HttpStatus.OK).send({
       slack_name: result.slack_name,
-      utc_time: result.utc_time,
+      utc_time: utcTime,
       track: result.track,
       github_file_url: result.github_file_url,
       github_repo_url: result.github_repo_url,
-      current_day: result.current_day,
+      current_day: currentDay,
       status,
     });
     // return res.status(200){
