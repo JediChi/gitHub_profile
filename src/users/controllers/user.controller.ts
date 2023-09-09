@@ -40,11 +40,11 @@ export class UserController {
 
     return res.status(HttpStatus.OK).send({
       slack_name: result.slack_name,
-      current_day: result.current_day,
       utc_time: result.utc_time,
       track: result.track,
       github_file_url: result.github_file_url,
       github_repo_url: result.github_repo_url,
+      current_day: result.current_day,
       status,
     });
     // return res.status(200){
