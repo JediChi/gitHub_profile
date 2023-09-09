@@ -6,23 +6,23 @@ const moment = require('moment-timezone');
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('users', [
-      {
-        id: 1,
-        slack_name: 'Adanma Akanno',
-        password: 'Queen98#',
-        current_day: moment().tz('UTC').format('dddd'),
-        utc_time: new Date().toISOString().slice(0, -2) + 'Z',
-        track: 'backend',
-        github_file_url:
-          'https://github.com/JediChi/gitHub_profile/blob/main/src/main.ts',
-        github_repo_url: 'https://github.com/JediChi/gitHub_profile',
-      },
+      // {
+      //   id: 1,
+      //   slack_name: 'Adanma Akanno',
+      //   password: 'Queen98#',
+      //   current_day: moment().tz('UTC').format('dddd'),
+      //   utc_time: new Date().toISOString().split('.')[0] + 'Z',
+      //   track: 'backend',
+      //   github_file_url:
+      //     'https://github.com/JediChi/gitHub_profile/blob/main/src/main.ts',
+      //   github_repo_url: 'https://github.com/JediChi/gitHub_profile',
+      // },
       {
         id: 2,
         slack_name: 'Chinyere Akanno',
         password: 'Queen98#',
         current_day: moment().tz('UTC').format('dddd'),
-        utc_time: new Date().toISOString().slice(0, -2) + 'Z',
+        utc_time: new Date().toISOString().split('.')[0] + 'Z',
         track: 'backend',
         github_file_url:
           'https://github.com/JediChi/gitHub_profile/blob/main/src/main.ts',
