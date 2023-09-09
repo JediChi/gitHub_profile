@@ -13,7 +13,7 @@ import { ResponseData } from 'src/users/dto/response/data.response.dto';
 import { IUser } from 'src/users/interfaces/user.interface';
 import { GetUser } from 'src/decorators/get_user.decorator';
 import { FindUserRequestDto } from 'src/users/dto/request/get.user.query.request.dto';
-import moment from 'moment';
+import * as moment from 'moment';
 
 @Controller('api')
 export class UserController {
