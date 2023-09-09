@@ -17,6 +17,17 @@ module.exports = {
           'https://github.com/JediChi/gitHub_profile/blob/main/src/main.ts',
         github_repo_url: 'https://github.com/JediChi/gitHub_profile',
       },
+      {
+        id: 2,
+        slack_name: 'Chinyere Akanno',
+        password: 'Queen98#',
+        current_day: moment().tz('UTC').format('dddd'),
+        utc_time: moment().tz('UTC').format(),
+        track: 'Backend',
+        github_file_url:
+          'https://github.com/JediChi/gitHub_profile/blob/main/src/main.ts',
+        github_repo_url: 'https://github.com/JediChi/gitHub_profile',
+      },
     ]);
   },
 

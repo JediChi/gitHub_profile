@@ -16,12 +16,12 @@ export class User extends Auditable {
 
   @Column({
     allowNull: false,
+    unique: true,
   })
   slack_name: string;
 
   @Column({
     allowNull: false,
-    defaultValue: moment().tz('UTC').format('dddd')
   })
   current_day: string;
 
@@ -32,7 +32,6 @@ export class User extends Auditable {
 
   @Column({
     allowNull: false,
-    defaultValue: moment().tz('UTC').format()
   })
   utc_time: string;
 

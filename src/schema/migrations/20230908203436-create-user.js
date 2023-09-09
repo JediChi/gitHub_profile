@@ -13,6 +13,7 @@ module.exports = {
       slack_name: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       },
       track: {
         type: Sequelize.STRING,
