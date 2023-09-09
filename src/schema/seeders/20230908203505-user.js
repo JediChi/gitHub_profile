@@ -11,7 +11,7 @@ module.exports = {
         slack_name: 'Adanma Akanno',
         password: 'Queen98#',
         current_day: moment().tz('UTC').format('dddd'),
-        utc_time: moment().tz('UTC').format(),
+        utc_time: new Date().toISOString(),
         track: 'backend',
         github_file_url:
           'https://github.com/JediChi/gitHub_profile/blob/main/src/main.ts',
@@ -22,7 +22,7 @@ module.exports = {
         slack_name: 'Chinyere Akanno',
         password: 'Queen98#',
         current_day: moment().tz('UTC').format('dddd'),
-        utc_time: moment().tz('UTC').format(),
+        utc_time: new Date().toISOString(),
         track: 'backend',
         github_file_url:
           'https://github.com/JediChi/gitHub_profile/blob/main/src/main.ts',

@@ -16,7 +16,8 @@ export class UserService {
 
   async create_user(user: CreateUserRequestDto): Promise<IUser> {
     const currentDay = moment().tz('UTC').format('dddd');
-    const utcTime = moment().tz('UTC').format();
+    const utcTime = new Date().toISOString();
+
     const password = await argon.hash(user.password);
     const [result, created] = await this.user_model.findOrCreate({
       where: { slack_name: user.slack_name },
