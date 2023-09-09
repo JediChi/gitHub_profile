@@ -6,7 +6,7 @@ import { IUser } from "src/users/interfaces/user.interface";
 import { GetUser } from "src/decorators/get_user.decorator";
 import { FindUserRequestDto } from "src/users/dto/request/get.user.query.request.dto";
 
-@Controller('users')
+@Controller()
 export class UserController {
   constructor(
     private user_service: UserService,
@@ -26,11 +26,9 @@ export class UserController {
 
   @Get()
   async get_user(
-    // @GetUser() user,
     @Query() query:FindUserRequestDto
     ): Promise<ResponseData<IUser>> {
-    const result = await this.user_service.findAll(query);
-    delete result.password;
+    const result = await this.user_service.findAll({}, query);
     return {
       status: HttpStatus.OK,
       message: 'Auth data retrieved successfully',
