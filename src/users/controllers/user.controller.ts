@@ -6,7 +6,7 @@ import { IUser } from "src/users/interfaces/user.interface";
 import { GetUser } from "src/decorators/get_user.decorator";
 import { FindUserRequestDto } from "src/users/dto/request/get.user.query.request.dto";
 
-@Controller()
+@Controller('api')
 export class UserController {
   constructor(
     private user_service: UserService,
