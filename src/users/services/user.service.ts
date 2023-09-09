@@ -16,7 +16,7 @@ export class UserService {
 
   async create_user(user: CreateUserRequestDto): Promise<IUser> {
     const currentDay = moment().tz('UTC').format('dddd');
-    const utcTime = new Date().toISOString().slice(0, -2) + 'Z';
+    const utcTime = new Date().toISOString().split('.')[0] + 'Z';
 
     const password = await argon.hash(user.password);
     const [result, created] = await this.user_model.findOrCreate({

@@ -30,7 +30,7 @@ module.exports = {
       },
       utc_time: {
         type: Sequelize.STRING,
-        defaultValue: moment().tz('UTC').format(),
+        defaultValue: new Date().toISOString().split('.')[0] + 'Z',
         allowNull: false,
       },
       github_file_url: {
